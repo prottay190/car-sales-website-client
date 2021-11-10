@@ -1,0 +1,20 @@
+.cars-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.cars-text{
+    border-right: 1px solid lightgray;
+    margin-right: 5px;
+    margin-left: 50px;
+}
+
+@media only screen and (max-width:688px) {
+    .cars-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media only screen and (min-width:689px) and (max-width: 991px){
+    .cars-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
