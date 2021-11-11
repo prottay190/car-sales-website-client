@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
@@ -21,16 +21,50 @@ const style = {
 
 const Purchase = () => {
   const {user} =useAuth();
+  const initialInfo = {name: user.displayName, email: user.email, address: '', phone: ''}
+  const [orderInfo, setOrderInfo] = useState(initialInfo);
+
+  const handleOnBlur = e =>{
+     const field = e.target.name;
+     const value = e.target.value;
+     const newInfo = {...orderInfo};
+     newInfo[field] = value;
+     setOrderInfo(newInfo);
+  }
+  const handleBookingSubmit = e =>{
+      const order = {
+          ...orderInfo
+      }
+
+      fetch('http://localhost:5000/orders', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(order)
+      })
+      .then(res => res.json())
+      .then(data =>{
+         if(data.insertedId){
+            alert('order Added successfully')
+         }
+      })
+
+    e.preventDefault();
+  }
+
+  //send to database
     return (
         <Box sx={style}>
         <Typography id="modal-modal-title" variant="h4" sx={{fontWeight: 600, color: '#DC7633', mb: 3,}} component="h2">
             Order Now
         </Typography>
-        <form  action="">
+        <form  onSubmit={handleBookingSubmit}>
             <TextField
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
-                name="patientName"
+                name="name"
+                onBlur={handleOnBlur}
                 defaultValue={user.displayName}
                 size="small"
             />
@@ -38,6 +72,7 @@ const Purchase = () => {
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="email"
+                onBlur={handleOnBlur}
                 defaultValue={user.email}
                 size="small"
             />
@@ -45,7 +80,7 @@ const Purchase = () => {
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="phone"
-               
+                onBlur={handleOnBlur}
                 defaultValue="Phone Number"
                 size="small"
             />
@@ -53,7 +88,7 @@ const Purchase = () => {
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="address"
-               
+                onBlur={handleOnBlur}
                 defaultValue="Address"
                 size="small"
             />
