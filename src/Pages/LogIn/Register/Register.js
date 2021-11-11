@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import Box from '@mui/material/Box';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -19,6 +19,7 @@ const style = {
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
+    const history = useHistory()
         const {user, registerUser, loading, authError } = useAuth()
 
     const handleOnBlur = e => {
@@ -35,7 +36,7 @@ const Register = () => {
             alert('Your password did not match');
             return
         }
-        registerUser(loginData.email, loginData.password, loginData.name);
+        registerUser(loginData.email, loginData.password, loginData.name, history);
         e.preventDefault();
     }
 

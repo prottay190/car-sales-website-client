@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import useAuth from '../../hooks/useAuth';
 
 
 const style = {
@@ -19,7 +20,7 @@ const style = {
 
 
 const Purchase = () => {
-  
+  const {user} =useAuth();
     return (
         <Box sx={style}>
         <Typography id="modal-modal-title" variant="h4" sx={{fontWeight: 600, color: '#DC7633', mb: 3,}} component="h2">
@@ -30,15 +31,14 @@ const Purchase = () => {
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="patientName"
-                defaultValue="name"
+                defaultValue={user.displayName}
                 size="small"
             />
             <TextField
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="email"
-                
-                defaultValue="email"
+                defaultValue={user.email}
                 size="small"
             />
             <TextField
