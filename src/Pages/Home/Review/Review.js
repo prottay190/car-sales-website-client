@@ -14,7 +14,7 @@ const Review = () => {
     return (
     <>
         <div style={{background: '#B3B6B7', padding: '20px', marginTop: '30px'}}>
-            <h2 style={{color: '#E7A633 '}}>Review A Product</h2>
+            <h2 style={{color: '#239B56 '}}>Review A Product</h2>
             <form onSubmit={handleOnSubmit}>
                 <TextField 
                    sx={{ width: '60%', marginTop: '30px' }}

@@ -9,7 +9,7 @@ const Car = ({car}) => {
     const { user} = useAuth();
      //delete 
      const handleDeleteUser = id =>{
-        const url = `http://localhost:5000/cars/${id}`
+        const url = `https://evening-hollows-76829.herokuapp.com/cars/${id}`
           fetch (url, {
               method: 'DELETE',
           })

@@ -36,7 +36,7 @@ const Purchase = () => {
           ...orderInfo
       }
 
-      fetch('http://localhost:5000/orders', {
+      fetch('https://evening-hollows-76829.herokuapp.com/orders', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
