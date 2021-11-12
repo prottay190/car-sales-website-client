@@ -1,10 +1,21 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Car.css'
 
 const Car = ({car}) => {
-    const {name, price, img, description} = car;
+    const {name, price, img, description } = car;
+    const { user} = useAuth();
+     //delete 
+     const handleDeleteUser = id =>{
+        const url = `http://localhost:5000/cars/${id}`
+          fetch (url, {
+              method: 'DELETE',
+          })
+          .then(res => res.json())
+          .then(data => { })
+    }
     return (
         <div className="car-container">
             <div>
@@ -17,6 +28,7 @@ const Car = ({car}) => {
                 <NavLink style={{ textDecoration: 'none' }} to='/purchase'>
                 <Button sx={{marginTop: '10px'}} variant="contained">Order Now</Button> 
                 </NavLink>
+                <Button onClick={() => handleDeleteUser(user._id)} sx={{marginTop: '10px', marginLeft: '12px'}} variant="contained">Delete</Button> 
             </div>
         </div>
     );

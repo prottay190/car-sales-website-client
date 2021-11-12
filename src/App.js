@@ -13,6 +13,10 @@ import Register from './Pages/LogIn/Register/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/LogIn/Login/PrivateRoute/PrivateRoute';
 import AddService from './Pages/AddService/AddService';
+import Dashboard from './Pages/DashBoard/Dashboard/Dashboard';
+import Orders from './Pages/DashBoard/Orders/Orders';
+import Review from './Pages/Home/Review/Review';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -35,11 +39,20 @@ function App() {
             <Route path="/moreServices">
               <Cars />
             </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
+            <Route path="/review">
+              <Review />
+            </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>

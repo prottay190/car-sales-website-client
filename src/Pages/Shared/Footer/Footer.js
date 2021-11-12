@@ -50,7 +50,7 @@ const Footer = () => {
                         Contact
                     </Typography>
                     <Typography variant="body1">
-                        <p>Our HotLIne: traveling.world@gmail.com</p>
+                        <p>Our HotLIne: carsales.house@gmail.com</p>
                         <p><FaPhoneSquareAlt /> Our TelePhone: 09845111782</p>
                         <p>Our Email: aarnob2020@gmail.com</p>
                         <p><FaMobile /> Our Mobile: 01711111110</p>

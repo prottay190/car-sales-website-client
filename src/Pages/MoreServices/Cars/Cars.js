@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Navigation from '../../Shared/Navigation/Navigation';
 import Car from '../Car/Car';
 import './Cars.css'
 
@@ -9,8 +10,10 @@ const Cars = () => {
         fetch('http://localhost:5000/cars')
         .then(res => res.json())
         .then(data => setCars(data))
-    },[])
+    },[]) 
     return (
+        <>
+        <Navigation></Navigation>
         <div className="cars-container">
             <div className="cars-text">
                   {
@@ -21,6 +24,7 @@ const Cars = () => {
                   }
             </div>
         </div>
+        </>
     );
 };
 
