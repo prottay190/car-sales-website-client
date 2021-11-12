@@ -15,11 +15,11 @@ import { Container, Typography } from '@mui/material';
 const TopBrands = () => {
     return (
         
-            <Box sx={{ flexGrow: 1, padding: '20px' }}>
-                <Typography sx={{  marginBottom: '20px' }} variant="h3">
+            <Box sx={{ flexGrow: 1, padding: '20px', marginTop: '30px' }}>
+                <Typography sx={{  marginBottom: '20px', color: '#E74C3C' }} variant="h3">
                     Top Brands We Provide
                 </Typography>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} sx={{marginTop: '20px'}}>
                     <Grid item xs={12} md={4}>
                         <img src={brands1} alt="" />
                     </Grid>

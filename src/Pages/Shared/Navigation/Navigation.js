@@ -35,7 +35,7 @@ const Navigation = () => {
             <Button color="inherit">Add-Service</Button>
             </NavLink>
             <NavLink style={{ textDecoration: 'none', color: '#fff' }} to='/moreServices'> 
-            <Button color="inherit">More-Services</Button>
+            <Button color="inherit">More-Products</Button>
             </NavLink>
             <NavLink style={{ textDecoration: 'none', color: '#fff' }} to='/review'> 
             <Button color="inherit">Review</Button>
