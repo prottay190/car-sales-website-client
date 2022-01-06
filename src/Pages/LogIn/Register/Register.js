@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import Box from '@mui/material/Box';
+import './Register.css'
 import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Footer from '../../Shared/Footer/Footer';
 
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '40%',
-    transform: 'translate(-50%, -50%)',
-    width: 450,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -41,9 +33,10 @@ const Register = () => {
     }
 
     return (
-        
-        <Container sx={{marginTop: '20px'}}>
-        <Box sx={style}>
+        <>
+        <Navigation></Navigation>
+        <Container> 
+        <Box className='regi-form'>
            { !loading && <form onSubmit={handleLoginSubmit}>
             <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -89,7 +82,8 @@ const Register = () => {
             {authError && <Alert severity="error">{authError}</Alert>}    
         </Box>
     </Container>
-   
+    <Footer></Footer>
+   </>
     );
 };
 

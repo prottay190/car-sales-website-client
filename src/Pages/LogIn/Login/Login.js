@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import Box from '@mui/material/Box';
+import './Login.css'
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Footer from '../../Shared/Footer/Footer';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '40%',
-    transform: 'translate(-50%, -50%)',
-    width: 450,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
@@ -36,8 +29,10 @@ const Login = () => {
     }
 
     return (
+        <>
+        <Navigation></Navigation>
         <Container>
-            <Box sx={style}>
+            <Box className='login-from'>
                 <form onSubmit={handleLoginSubmit}>
                     <TextField
                         sx={{ width: '75%', m: 1 }}
@@ -53,13 +48,13 @@ const Login = () => {
                         type="password"
                         name="password"
                         onBlur={handleOnChange}
-                        variant="standard" />
+                        variant="standard" /> <br />
 
                     <NavLink
                         style={{ textDecoration: 'none' }}
                         to="/register">
                         <Button variant="text">New User? Please Register</Button>
-                    </NavLink>
+                    </NavLink><br />
                     <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
 
                 </form>
@@ -68,7 +63,11 @@ const Login = () => {
                 {authError && <Alert severity="error">{authError}</Alert>}
             </Box>
         </Container>
+        <Footer></Footer>
+        </>
     );
 };
 
 export default Login;
+
+
