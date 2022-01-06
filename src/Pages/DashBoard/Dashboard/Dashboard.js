@@ -54,9 +54,9 @@ function Dashboard(props) {
             <Link style={{ textDecoration: 'none' }} to="/moreServices"><Button color="inherit">MoreServices</Button></Link> <br />
             <Link style={{ textDecoration: 'none' }} to={`${url}/payment`}><Button color="inherit">Payment</Button></Link> <br />
             <Link style={{ textDecoration: 'none' }} to={`${url}/order`}><Button color="inherit">MyOrder</Button></Link> <br />
+            <Link style={{ textDecoration: 'none' }} to="/review"><Button color="inherit">Review</Button></Link> <br />
          
             { admin && <Box>
-                <Link style={{ textDecoration: 'none' }} to="/review"><Button color="inherit">Review</Button></Link> <br />
                   <Link style={{ textDecoration: 'none' }} to="/addservice"><Button color="inherit">Add a Product</Button></Link> <br />
                   <Link style={{ textDecoration: 'none' }} to={`${url}/manageOrder`}><Button color="inherit">Manage All Orders</Button></Link> <br />
                   <Link style={{ textDecoration: 'none' }} to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link> <br /> 

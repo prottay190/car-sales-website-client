@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './AddService.css';
+import Navigation from '../Shared/Navigation/Navigation';
+import Footer from '../Shared/Footer/Footer';
 
 const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -17,7 +19,9 @@ const AddService = () => {
         })
     }
 
-    return (      
+    return (   
+        <> 
+        <Navigation></Navigation>
         <div className="add-services">
         <h2 style={{fontSize: '40px', fontWeight: 600, color: '#F4D03F', marginBottom: '20px'}}>Add services</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -28,6 +32,8 @@ const AddService = () => {
         <input style={{fontSize: '20px', backgroundColor: '#935116'}}  type="submit" />
         </form>
     </div>
+    <Footer></Footer>
+    </>
     
     );
 };
