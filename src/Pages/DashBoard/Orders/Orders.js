@@ -13,8 +13,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect( ()=>{
-        const url = `https://evening-hollows-76829.herokuapp.com/orders?email=${user.email}`
-        fetch('url')
+        fetch('')
         .then(res => res.json())
         .then(data => setOrders(data))
     },[])
@@ -32,7 +31,7 @@ const Orders = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {orders.map((row) => (
+                    {orders.map((row) => (
                             <TableRow
                                 key={row._id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
