@@ -20,7 +20,7 @@ const MakeAdmin = () => {
 
     const handleAdmin = e => {
         const user = { email };
-        fetch('https://evening-hollows-76829.herokuapp.com/users/admin', {
+        fetch(' https://floating-oasis-48049.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -52,7 +52,7 @@ function Dashboard(props) {
             <Divider />
 
             <Link style={{ textDecoration: 'none' }} to="/moreServices"><Button color="inherit">MoreServices</Button></Link> <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}/payment`}><Button color="inherit">Payment</Button></Link> <br />
+            {/* <Link style={{ textDecoration: 'none' }} to='/payment'><Button color="inherit">Payment</Button></Link> <br /> */}
             <Link style={{ textDecoration: 'none' }} to={`${url}/order`}><Button color="inherit">MyOrder</Button></Link> <br />
             <Link style={{ textDecoration: 'none' }} to="/review"><Button color="inherit">Review</Button></Link> <br />
          

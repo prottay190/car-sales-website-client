@@ -9,7 +9,7 @@ const Car = ({car}) => {
     const { user} = useAuth();
      //delete 
      const handleDeleteUser = id =>{
-        const url = `https://evening-hollows-76829.herokuapp.com/cars/${id}`
+        const url = ` https://floating-oasis-48049.herokuapp.com/cars/${id}`
           fetch (url, {
               method: 'DELETE',
           })
@@ -28,7 +28,7 @@ const Car = ({car}) => {
                 <NavLink style={{ textDecoration: 'none' }} to='/purchase'>
                 <Button sx={{marginTop: '10px'}} variant="contained">Order Now</Button> 
                 </NavLink>
-                <Button onClick={() => handleDeleteUser(user._id)} sx={{marginTop: '10px', marginLeft: '12px'}} variant="contained">Delete</Button> 
+                <Button onClick={() => handleDeleteUser(user._id)} sx={{marginTop: '10px', marginLeft: '12px'}} variant="contained">Delete</Button>             
             </div>
         </div>
     );

@@ -76,7 +76,7 @@ const useFirebase = () => {
     }, [])
 
     useEffect(()=>{
-        fetch(`https://evening-hollows-76829.herokuapp.com/users/${user.email}`)
+        fetch(`https://floating-oasis-48049.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
     },[user.email])
@@ -95,7 +95,7 @@ const useFirebase = () => {
 
     const saveUser =(email, displayName) =>{
         const user = {email, displayName };
-        fetch('https://evening-hollows-76829.herokuapp.com/users',{
+        fetch(' https://floating-oasis-48049.herokuapp.com/users',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

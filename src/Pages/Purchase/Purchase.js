@@ -20,8 +20,8 @@ const style = {
 
 
 const Purchase = () => {
-  const {user} =useAuth();
-  const initialInfo = {name: user.displayName, email: user.email, address: '', phone: ''}
+  const {user} = useAuth();
+  const initialInfo = {name: user.displayName, email: user.email, address: '', phone: '', price: ''}
   const [orderInfo, setOrderInfo] = useState(initialInfo);
 
   const handleOnBlur = e =>{
@@ -36,7 +36,7 @@ const Purchase = () => {
           ...orderInfo
       }
 
-      fetch('https://evening-hollows-76829.herokuapp.com/orders', {
+      fetch(' https://floating-oasis-48049.herokuapp.com/orders', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -67,7 +67,7 @@ const Purchase = () => {
                 onBlur={handleOnBlur}
                 defaultValue={user.displayName}
                 size="small"
-            />
+            />        
             <TextField
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
@@ -76,21 +76,32 @@ const Purchase = () => {
                 defaultValue={user.email}
                 size="small"
             />
+              <TextField
+                sx={{width: '100%', m: 1,}}
+                id="outlined-size-small"
+                name="price"
+                onBlur={handleOnBlur}
+                size="small"
+                placeholder="your 50% payment"
+                required
+            />
             <TextField
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="phone"
                 onBlur={handleOnBlur}
-                defaultValue="Phone Number"
+                placeholder="Phone Number"
                 size="small"
+                required
             />
             <TextField
                 sx={{width: '100%', m: 1,}}
                 id="outlined-size-small"
                 name="address"
                 onBlur={handleOnBlur}
-                defaultValue="Address"
+                placeholder="Address"
                 size="small"
+                required
             />
             <Button type="submit" variant="contained">Submit</Button>
         </form>

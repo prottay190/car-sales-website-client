@@ -17,6 +17,7 @@ import Dashboard from './Pages/DashBoard/Dashboard/Dashboard';
 import Orders from './Pages/DashBoard/Orders/Orders';
 import Review from './Pages/Home/Review/Review';
 import NotFound from './Pages/NotFound/NotFound';
+import PaymentMethod from './Pages/DashBoard/PaymentMethod/PaymentMethod';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/Payment">
+              <PaymentMethod />
             </Route>
             <PrivateRoute path="/purchase">
               <Purchase />
